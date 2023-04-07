@@ -33,7 +33,7 @@ app.post("/", (req, res) => {
     } else {
       console.log("Connected to MySQL database");
       var sql =
-        "INSERT INTO poes VALUES('" +
+        "INSERT INTO popes VALUES('" +
         po1 +
         "','" +
         po2 +
