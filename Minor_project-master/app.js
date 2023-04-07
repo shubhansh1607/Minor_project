@@ -1,16 +1,11 @@
 
-const mysql = require('mysql');
+const connection = require('./connection');
 const express = require('express');
 const ejs = require('ejs');
 const app = express();
 
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'Ss020708',
-  database: 'minor'
-});
 
+/*
 connection.connect((err) => {
   if (err) {
     console.error('Error connecting to MySQL database:', err);
@@ -30,8 +25,22 @@ app.get('/', (req, res) => {
         }
     });
 });
+*/
 
+// app.get("/",function(req,res){
+//   if(error) throw error;
+//   res.send("This is from server side");
+// })
+
+// app.listen(3000, () => {
+//   console.log('Server listening on port 3000');
+// });
+
+app.get('/', (req, res) => {
+  //res.sendFile(__dirname + '/form.html');
+  res.send("Hello World");
+});
 
 app.listen(3000, () => {
-  console.log('Server listening on port 3000');
+  console.log('Server started on port 3000');
 });
