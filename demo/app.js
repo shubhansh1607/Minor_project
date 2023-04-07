@@ -66,18 +66,18 @@ app.post("/", (req, res) => {
   const co6end = parseInt(req.body.txtCo6EndSemMarks);
   var x6 =
     (((co6t1 + co6t2 + co6t3 + co6assignment + co6gp) / 80) * 100 + co6end) / 2;
-  //   connection.connect((err) => {
-  //     if (err) {
-  //       console.error("Error connecting to MySQL database: ", err);
-  //     } else {
-  //       console.log("Connected to MySQL database");
-  //       var sql="INSERT INTO directassesment(co1,co2,co3,co4,co5,co6) VALUES('"+x1+"','"+x2+"','"+x3+"','"+x4+"','"+x5+"','"+x6+"')";
-  //       connection.query(sql,function(error,result)
-  //       {
-  //         if(error) throw error;
-  //       });
-  //     }
-  //   });
+    connection.connect((err) => {
+      if (err) {
+        console.error("Error connecting to MySQL database: ", err);
+      } else {
+        console.log("Connected to MySQL database");
+        var sql="INSERT INTO directassesment(co1,co2,co3,co4,co5,co6) VALUES('"+x1+"','"+x2+"','"+x3+"','"+x4+"','"+x5+"','"+x6+"')";
+        connection.query(sql,function(error,result)
+        {
+          if(error) throw error;
+        });
+      }
+    });
   res.send("Form submitted successfully");
 });
 
